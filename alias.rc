@@ -1,0 +1,14 @@
+
+
+export ZSHRC=~/.zshrc
+alias vrc="vim $ZSHRC"
+alias src="source $ZSHRC"
+
+
+alias ca="conda activate"
+alias ca="conda activate"
+alias da="conda deactivate"
+alias cl="conda env list"
+alias lsn="ls $iv/navi/*.webloc"
+alias typo="open -a typora"
+alias tree="tree -N"

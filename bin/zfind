@@ -1,0 +1,63 @@
+#! /Users/zxzx/.conda/envs/scrapy/bin/python
+#coding=utf-8
+import os,sys
+
+
+help_txt = """
+使用 zfind -h 来获取帮助
+使用 zfind 关键字 在当前目录查询含有`关键字`的md文档
+使用 zfind 关键字 -d 路径 在指定目录查询含有`关键字`的md文档
+使用 zfind 关键字 -d 路径 -s 文件后缀 在指定目录查询含有`关键字`的指定后缀文档
+使用 zfind 关键字 -d 路径 -s 文件后缀 -t 查找类型(d:文件夹, f: 文件) 在指定目录查询含有`关键字`的指定后缀文档
+
+问题:
+    暂时无法检测失效软链接的问题
+"""
+
+######################## 准备变量
+search_dir = ''
+keyword = ''
+suffix = ''
+type = ''
+
+args = sys.argv
+if len(args) > 1 and args[1] == '-h':
+    print(help_txt)
+if len(args) >= 2:
+    keyword = sys.argv[1]
+
+# 捕捉多余可选参数
+opt_args = args[2:]
+for i in range(len(opt_args)):
+    if(opt_args[i] == '-s'):
+        suffix = opt_args[i+1]
+    if (opt_args[i] == '-d'):
+        search_dir = opt_args[i+1]
+    if (opt_args[i] == '-t'):
+        type = opt_args[i+1]
+
+######### 执行命令
+search_dir = search_dir or '.'
+suffix = suffix or 'md'
+type = type or 'f'
+
+if type == 'd':
+    suffix = ''
+else:
+    suffix = '.'+ suffix
+
+command = 'find  -L {} -iname "*{}*{}" -type {}'.format(search_dir, keyword, suffix, type)
+# example as: find . -iname "*@make*.md"
+######### 执行查询软链接命令
+print("the command is: ", command)
+ret = os.popen(command).readlines()
+
+
+for line in ret:
+    print(line, end='')
+
+
+
+
+
+

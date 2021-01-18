@@ -1,0 +1,8 @@
+if [ -f ~/.path.rc ]; then
+    source ~/.path.rc
+fi
+
+if [ -f ~/.alias.rc ]; then
+    source ~/.alias.rc
+fi
+

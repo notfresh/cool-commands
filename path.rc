@@ -1,0 +1,23 @@
+export zshrc=/Users/zxzx/.zshrc # 绝对路径
+export pj=/Users/zxzx/projects/
+export iv=/Users/zxzx/projects/interview
+export tmp=/Users/zxzx/tmp
+
+export dl=~/Downloads/
+
+export gff=root@39.107.136.143
+export zx=/root/zxzx
+export zxd=$gff:$zx
+
+scpf(){
+    command="scp $1 $zxd"
+    scp $1 $zxd$2
+}
+  
+
+scpd(){
+    command="scp -r $1 $zxd$2"
+    scp -r $1 $zxd$2
+
+}
+
