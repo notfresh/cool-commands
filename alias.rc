@@ -12,3 +12,14 @@ alias cl="conda env list"
 alias lsn="ls $iv/navi/*.webloc"
 alias typo="open -a typora"
 alias tree="tree -N"
+
+alias lsm="ls $swim/navi/*.webloc"
+alias lsd="ls -d */"
+
+alias g++="g++ -std=c++11"
+alias bbs="echo /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output && ls /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output"
+alias csdn="echo /Users/zxzx/Documents/csdn_blogs && ls /Users/zxzx/Documents/csdn_blogs"
+
+alias rsync="rsync -av -e ssh"
+alias ssync="rsync $pj/Cpp11WebServer $zxd "
+alias ssync2="rsync $pj/cpp-projects/cpp14-webserver $zxd "

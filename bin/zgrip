@@ -1,4 +1,4 @@
-#! /Users/zxzx/.conda/envs/scrapy/bin/python
+#! /usr/bin/env python3
 #coding=utf-8
 import os,sys
 
@@ -8,6 +8,7 @@ help_txt = """
 使用 zgrip 关键字 在当前目录查询含有`关键字`的md文档
 使用 zgrip 关键字 -d 路径 在指定目录查询含有`关键字`的md文档
 使用 zgrip 关键字 -d 路径 -s 文件后缀 在指定目录查询含有`关键字`的指定后缀文档
+使用 zgrip 关键字 -e 排除路径  查询的时候排除指定路径
 """
 
 ######################## 准备变量
@@ -15,6 +16,7 @@ search_dir = ''
 keyword = ''
 suffix = ''
 count = ''
+exclude = ''
 
 args = sys.argv
 if len(args) > 1 and args[1] == '-h':
@@ -31,6 +33,8 @@ for i in range(len(opt_args)):
         search_dir = opt_args[i+1]
     if (opt_args[i] == '-c'):
         count = opt_args[i+1]
+    if (opt_args[i] == '-e'):
+        exclude = opt_args[i+1]
 
 
 ######### 执行命令
@@ -38,8 +42,10 @@ search_dir = search_dir or '.'
 suffix = suffix or 'md'
 suffix = '.'+ suffix
 count = count or '2'
+# 如果 -e 参数代表的 exclude 不为空,那么拼接上查询
+exclude_phrase = '-o -path "*{}*" -prune'.format(exclude) if exclude else ''
 
-command = 'find -L %s -name "*%s" | awk \'{a="\\"";print a $0 a}\' | xargs grep %s -n -B%s -A%s'%(search_dir, suffix, keyword, count, count)
+command = 'find -L %s -name "*%s" -print %s | awk \'{a="\\"";print a $0 a}\' | xargs grep %s -i -n -B%s -A%s'%(search_dir, suffix, exclude_phrase, keyword, count, count)
 # example as: find . -iname "*@make*.md"
 ######### 执行查询软链接命令
 print("the command is: ", command)

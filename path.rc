@@ -4,20 +4,48 @@ export iv=/Users/zxzx/projects/interview
 export tmp=/Users/zxzx/tmp
 
 export dl=~/Downloads/
+export swim=~/Movies/swim
+export a=~
 
 export gff=root@39.107.136.143
-export zx=/root/zxzx
+
+export pku=1901210750@115.27.161.210
+
+export zx=/root/zxzx/
 export zxd=$gff:$zx
+export int=/Users/zxzx/projects/interview/writings/interesting
+
 
 scpf(){
-    command="scp $1 $zxd"
+    command="scp $1 $zxd$2"
+    echo $command
     scp $1 $zxd$2
 }
   
 
 scpd(){
-    command="scp -r $1 $zxd$2"
+    command="scp -rp !($1/.git) $1 $zxd$2"
+    echo $command
     scp -r $1 $zxd$2
 
 }
 
+crawl(){
+   ca scrapy
+   cd /Users/zxzx/projects/scrapy_projects/hg_crawler
+   scrapy crawl csdn -a user=$1 -a max_page=$2
+   da
+   echo "爬取完成"
+   echo ~/Documents/csdn_blogs
+}
+
+
+bbs-crawl(){
+   
+   ca scrapy
+   cd /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test
+   scrapy crawl post -a url=$1
+   da
+   echo "爬取完成"
+   echo /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output
+}
