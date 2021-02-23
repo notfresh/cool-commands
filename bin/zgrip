@@ -45,9 +45,19 @@ count = count or '2'
 # 如果 -e 参数代表的 exclude 不为空,那么拼接上查询
 exclude_phrase = '-o -path "*{}*" -prune'.format(exclude) if exclude else ''
 
-command = 'find -L %s -name "*%s" -print %s | awk \'{a="\\"";print a $0 a}\' | xargs grep %s -i -n -B%s -A%s'%(search_dir, suffix, exclude_phrase, keyword, count, count)
-# example as: find . -iname "*@make*.md"
-######### 执行查询软链接命令
+def make_comand():
+    if '+' in suffix:
+        exclude_phrases = suffix.split('+')
+        # suffix = '.'+ suffix
+        exclude_phrases = list(set(exclude_phrases))  # 去重
+        exclude_phrases = [item for item in exclude_phrases]
+
+    command = 'find -L %s -name "*%s" -print %s | awk \'{a="\\"";print a $0 a}\' | xargs grep "%s" -i -n -B%s -A%s'%(search_dir, suffix, exclude_phrase, keyword, count, count)
+    # example as: find . -iname "*@make*.md"
+    ######### 执行查询软链接命令
+    return command
+
+command = make_comand()
 print("the command is: ", command)
 ret = os.popen(command).readlines()
 

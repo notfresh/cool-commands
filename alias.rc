@@ -1,25 +1,61 @@
-
-
 export ZSHRC=~/.zshrc
 alias vrc="vim $ZSHRC"
 alias src="source $ZSHRC"
 
+alias ali="vim ~/.alias"
+alias pas="vim ~/.path"
 
-alias ca="conda activate"
+# python pypi package command
+alias pypk="python setup.py sdist bdist_wheel"
+
+# conda
 alias ca="conda activate"
 alias da="conda deactivate"
 alias cl="conda env list"
+
+# navi
 alias lsn="ls $iv/navi/*.webloc"
+
+# macos 下用命令行打开某个程序
 alias typo="open -a typora"
+alias vs='open -a "visual studio code"'
+
+# 迅速创建3个优先级文件
+alias md3="mkdir 1级 2级 3级"
+
 alias tree="tree -N"
 
 alias lsm="ls $swim/navi/*.webloc"
 alias lsd="ls -d */"
 
 alias g++="g++ -std=c++11"
-alias bbs="echo /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output && ls /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output"
-alias csdn="echo /Users/zxzx/Documents/csdn_blogs && ls /Users/zxzx/Documents/csdn_blogs"
 
-alias rsync="rsync -av -e ssh"
-alias ssync="rsync $pj/Cpp11WebServer $zxd "
+alias bbs="echo /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output && ls /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output"
+
+alias csdn="cd /Users/zxzx/Documents/csdn_blogs && ls /Users/zxzx/Documents/csdn_blogs"
+
+alias rsync="rsync -av -e ssh --delete"
+alias ssync="rsync  --exclude='.git/*' $pj/Cpp11WebServer $zxd"
 alias ssync2="rsync $pj/cpp-projects/cpp14-webserver $zxd "
+
+alias ghc="gh repo clone"
+alias gtc="git clone"
+
+# 批量命名文件夹内的所有文件
+zrenamed(){
+  ls | awk '{a="\"";print a $0 a;}' | xargs zrename
+}
+
+# 进入htmls目录
+alias html="cd /Users/zxzx/projects/interview/htmls"
+
+
+cdx(){
+  echo `pwd` >> ~/.cdh.rc
+  cd $1
+}
+
+export cdhf=/Users/zxzx/.cdh.rc
+alias cdh="uniq $cdhf"
+
+alias chrome="open -a 'google chrome'"
