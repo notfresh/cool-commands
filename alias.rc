@@ -2,8 +2,8 @@ export ZSHRC=~/.zshrc
 alias vrc="vim $ZSHRC"
 alias src="source $ZSHRC"
 
-alias ali="vim ~/.alias"
-alias pas="vim ~/.path"
+alias ali="vim ~/projects/zcommands/alias.rc"
+alias pas="vim ~/projects/zcommands/path.rc"
 
 # python pypi package command
 alias pypk="python setup.py sdist bdist_wheel"
@@ -17,7 +17,7 @@ alias cl="conda env list"
 alias lsn="ls $iv/navi/*.webloc"
 
 # macos 下用命令行打开某个程序
-alias typo="open -a typora"
+alias typo="open -a typora" # only in macos, not work in Linux
 alias vs='open -a "visual studio code"'
 
 # 迅速创建3个优先级文件
@@ -30,9 +30,9 @@ alias lsd="ls -d */"
 
 alias g++="g++ -std=c++11"
 
-alias bbs="echo /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output && ls /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/output"
+alias bbs="echo ~/projects/scrapy_projects/bbs_crawler/crawl_test/output && ls ~/projects/scrapy_projects/bbs_crawler/crawl_test/output"
 
-alias csdn="cd /Users/zxzx/Documents/csdn_blogs && ls /Users/zxzx/Documents/csdn_blogs"
+alias csdn="cd ~/Documents/csdn_blogs && ls ~/Documents/csdn_blogs"
 
 alias rsync="rsync -av -e ssh --delete"
 alias ssync="rsync  --exclude='.git/*' $pj/Cpp11WebServer $zxd"
@@ -47,7 +47,7 @@ zrenamed(){
 }
 
 # 进入htmls目录
-alias html="cd /Users/zxzx/projects/interview/htmls"
+alias html="cd ~/projects/interview/htmls"
 
 
 cdx(){
@@ -55,7 +55,7 @@ cdx(){
   cd $1
 }
 
-export cdhf=/Users/zxzx/.cdh.rc
+export cdhf=~/.cdh.rc
 alias cdh="uniq $cdhf"
 
 alias chrome="open -a 'google chrome'"
