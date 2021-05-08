@@ -8,24 +8,28 @@ export swim=~/Movies/swim
 export a=~
 
 export gff2=root@39.107.136.143
-export gff=root@123.57.211.10
+# export gff=root@123.57.211.10
+export gff=root@47.93.18.94
 export gffip=${gff:5:15}
 
 export pku=1901210750@115.27.161.210
 
 export zx=/root/zxzx/
 export zxd=$gff:$zx
-export int=/Users/zxzx/projects/interview/writings/interesting
+export int=/Users/zxzx/projects/interview/a-writings/interesting
 
 export doc=/Users/zxzx/Documents
 export ivrush=/Users/zxzx/projects/interview/0面试突击清单 
 export p6=/Users/zxzx/projects/interview/6.824
+export gol=/Users/zxzx/projects/learn_projects/go_learn
 
 # es
 export usr=/Users/zxzx/usr
 export seo=/Users/zxzx/projects/blog-seo-挑战杯
 export es=/Users/zxzx/usr/elasticsearch-7.6.0
 export kib=/Users/zxzx/usr/kibana-7.6.0-darwin-x86_64
+export se=/Users/zxzx/projects/search-engine-related
+export cpp=/Users/zxzx/projects/interview/cpp-interview
 
 scpf(){
     command="scp $1 $zxd$2"
@@ -65,3 +69,5 @@ bbs-crawl(){
 export enl=/Users/zxzx/projects/learn_projects/english-learn
 export cpl=~/projects/learn_projects/cpp_learn/
 export mr=/Users/zxzx/projects/my6.824code/origin-sourcecode/src/mapreduce
+export psd=/Users/zxzx/projects/ps-design
+export xxjs=/Users/zxzx/Documents/上课资料/信息检索

@@ -35,6 +35,8 @@ alias bbs="echo /Users/zxzx/projects/scrapy_projects/bbs_crawler/crawl_test/outp
 alias csdn="cd /Users/zxzx/Documents/csdn_blogs && ls /Users/zxzx/Documents/csdn_blogs"
 
 alias rsync="rsync -av -e ssh --delete"
+alias sync="rsync -av -e ssh --delete"
+
 alias ssync="rsync  --exclude='.git/*' $pj/Cpp11WebServer $zxd"
 alias ssync2="rsync $pj/cpp-projects/cpp14-webserver $zxd "
 
@@ -55,7 +57,29 @@ cdx(){
   cd $1
 }
 
-export cdhf=/Users/zxzx/.cdh.rc
+export cdhf=~/.cdh.rc
 alias cdh="uniq $cdhf"
 
 alias chrome="open -a 'google chrome'"
+# alias gdb="gdb -x ~/.gdbconfig"
+
+swm(){
+   f="/Users/zxzx/projects/swim/梦觉自由泳教学.md"
+   vs $f
+}
+
+psd(){
+   f="/Users/zxzx/projects/ps-design/1-ps.md"
+   vs  $f
+}
+
+ivo(){
+  vs $iv
+}
+# 光速打开go学习笔记
+alias golc="vs /Users/zxzx/projects/interview/6.824/go_learn/1级/go-learn笔记.md"
+alias alg="vs /Users/zxzx/projects/interview/a-rush/算法突击清单.md"
+
+alias gr="go run "
+
+alias gdb="sudo gdb"
