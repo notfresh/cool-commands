@@ -1,8 +1,10 @@
-if [ -f ~/.path.rc ]; then
-    source ~/.path.rc
+if [ -f ~/projects/zcommands/path.rc ]; then
+    source ~/projects/zcommands/path.rc
 fi
 
-if [ -f ~/.alias.rc ]; then
-    source ~/.alias.rc
+if [ -f ~/projects/zcommands/alias.rc ]; then
+    source ~/projects/zcommands/alias.rc
 fi
+
+
 

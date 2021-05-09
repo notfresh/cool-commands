@@ -68,3 +68,6 @@ bbs-crawl(){
 export enl=~/projects/learn_projects/english-learn
 export cpl=~/projects/learn_projects/cpp_learn/
 export mr=~/projects/my6.824code/origin-sourcecode/src/mapreduce
+
+# add
+export PATH=$PATH:~/projects/zcommands/bin
