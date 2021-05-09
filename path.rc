@@ -35,7 +35,7 @@ scpf(){
     echo $command
     scp $1 $zxd$2
 }
-  
+
 
 scpd(){
     command="scp -rp !($1/.git) $1 $zxd$2"
