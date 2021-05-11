@@ -83,3 +83,9 @@ alias alg="vs /Users/zxzx/projects/interview/a-rush/算法突击清单.md"
 alias gr="go run "
 
 alias gdb="sudo gdb"
+
+lsp(){
+  a=`pwd`
+  ls $1 | awk '{ print test "/" $1 }' test="$a"
+}
+
