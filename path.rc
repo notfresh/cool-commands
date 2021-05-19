@@ -83,6 +83,8 @@ tr(){
 ckgit(){
     if [ -e .git ]; then
         echo "this is a git repo!!!";
+    else
+        echo "this is not a git repo!!!";
     fi 
 }
 
