@@ -77,3 +77,21 @@ tr(){
     level=$1
     echo $1 | xargs tree -L  # you cannot use tree -L $1, I don't know why
 }
+
+
+
+ckgit(){
+    if [ -e .git ]; then
+        echo "this is a git repo!!!";
+    fi 
+}
+
+zpgit(){
+    if [ -e .git ]; then
+        echo "this is a git repo!!!";
+        echo "now the .git will be zipped!"
+        zip $(date +%Y%m%d%H%M%S).git.zip .git/*
+        rm -rf .git
+    fi 
+}
+
