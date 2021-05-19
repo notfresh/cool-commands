@@ -71,3 +71,9 @@ export mr=~/projects/my6.824code/origin-sourcecode/src/mapreduce
 
 # add
 export PATH=$PATH:~/projects/zcommands/bin
+
+
+tr(){
+    level=$1
+    echo $1 | xargs tree -L  # you cannot use tree -L $1, I don't know why
+}
