@@ -89,3 +89,5 @@ lsp(){
   ls $1 | awk '{ print test "/" $1 }' test="$a"
 }
 
+export knowp=~/projects/knowledge # do not wrap it with quotation mark
+
